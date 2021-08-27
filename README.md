@@ -1,5 +1,5 @@
 # Build Week Project
-# kickstarter Prediction App (https://kickstarter-buildweek.herokuapp.com/)
+# Kickstarter Prediction App (https://kickstarter-buildweek.herokuapp.com/)
 
 Created by: 
 
