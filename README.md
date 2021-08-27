@@ -7,7 +7,7 @@ Created by:
 
 -Luke Sislowski (https://www.linkedin.com/in/luke-sislowski/)
 
--Jeremy Hebert
+-Jeremy Hebert (https://www.linkedin.com/in/jeremy-hebert/)
 
 -Jackson Reber (https://www.linkedin.com/in/jacksonreber/)
 
