@@ -3,7 +3,7 @@
 
 Created by: 
 
--Jess Huang 
+-Jess Huang (https://github.com/jessyio)
 
 -Luke Sislowski (https://www.linkedin.com/in/luke-sislowski/)
 
