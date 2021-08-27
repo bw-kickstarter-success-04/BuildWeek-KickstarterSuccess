@@ -1,0 +1,207 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<html>
+<head>
+<style>
+h2 {
+  color: rgb(58, 118, 209);
+  font-family: verdana;
+  font-size: 300%;
+}
+p {
+  color: rgb(247, 247, 247);
+  font-family: courier;
+  font-size: 160%;
+  border: 2px solid rgba(2, 62, 70, 0.144);
+  padding: 20px;
+}
+form {
+  border: 2px solid rgb(2, 62, 70);
+  padding: 20px;
+}
+body {
+  background-color: rgb(89, 158, 204);
+}
+::placeholder {
+  font-size: 12px;
+  font-style: italic;
+}
+
+</style>
+</head>
+<body>
+
+
+    <!-- Starts image section -->
+    <div class="row justify-content-md-center mb-4">
+      <h2 class='text-primary'>Will Your Kickstarter Be Successful?</h2>
+  </div>
+  
+        <p> Welcome to our Kickstarter Application!
+        You can use this app to input information about a current Kickstarter campaign
+        and our model will tell you whether or not that campaign will meet its fundraising goals. 
+        Our model makes predictions based on a dataset of over 300,000 Kickstarter campaigns and has a 76% accuracy
+        <br>
+        <br>
+        <button type="button" onclick="window.location.href='/about'">Learn More</button>
+        <input type="button" onclick="location.href='https://github.com/bw-kickstarter-success-04/BuildWeek---KickstarterSuccess';" value="View Project on Github"/></p>
+       
+       
+    </div>
+    
+    
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='images/together.jpg')}}" class="img-thumbnail" />
+                <div class="caption">
+                    
+                   </div>
+            </div>
+        </div>
+        
+    <!-- Ends image section -->
+    
+    <!-- Starts form section -->
+    <div class="form-container ">
+        <form class="form-horizontal" action = "/predict/" method="post">
+            <!-- Selection for "goal" -->
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="goal">Goal ($):</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="goal" name="goal" placeholder="your campaigns fundraising goal">
+              </div>
+            </div>
+            <!-- Selection for "month" -->
+            <label for="month">Launch month:</label>
+              <select id="month" name="month">
+                <option value="1">Jan</option>
+                <option value="2">Feb</option>
+                <option value="3">Mar</option>
+                <option value="4">Apr</option>
+                <option value="5">May</option>
+                <option value="6">Jun</option>
+                <option value="7">Jul</option>
+                <option value="8">Aug</option>
+                <option value="9">Sept</option>
+                <option value="10">Oct</option>
+                <option value="11">Nov</option>
+                <option value="12">Dec</option>
+              </select>
+            <!-- Selection for "year" -->
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="year">Campaign Start Year:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="year" name="year" placeholder="the year your campaign launched">
+              </div>
+            </div>
+            <!-- Selection for "duration" -->
+            <div class="form-group row">
+                <label class="control-label col-sm-2" for="duration">Duration (in days):</label>
+                <div class="col-sm-4">          
+                  <input type="text" class="form-control" id="duration" name="duration" placeholder="how long does your campaign last?">
+                </div>
+              </div>
+                <!-- Selection for "time since last project" -->
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="time_since_last_project">Time Since Last Project:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="time_since_last_project" name="time_since_last_project" placeholder="how many days since your last project?">
+              </div>
+            </div>
+
+            <!--<div class="form-group row">
+                <label class="control-label col-sm-2" for="currency">Currency Type:</label>
+                <div class="col-sm-4">          
+                  <input type="text" class="form-control" id="currency" name="currency">
+                </div>
+              </div>-->
+
+              <!-- Selection for "currency (drop down)" -->
+              <label for="currency">Choose your currency:</label>
+              <select id="currency" name="currency">
+                <option value="13">USD</option>
+                <option value="5">GBP</option>
+                <option value="1">CAD</option>
+                <option value="0">AUD</option>
+                <option value="9">NOK</option>
+                <option value="4">EUR</option>
+                <option value="8">MXN</option>
+                <option value="11">SEK</option>
+                <option value="10">NZD</option>
+                <option value="2">CHF</option>
+                <option value="3">DKK</option>
+                <option value="6">HKD</option>
+                <option value="12">SGD</option>
+                <option value="7">JPY</option>
+              </select>
+              
+                <!-- Selection for "country (drop down)" -->
+              <label for="country">Choose your country:</label>
+              <select id="country" name="country">
+                <option value="22">US</option>
+                <option value="9">GB</option>
+                <option value="3">CA</option>
+                <option value="1">AU</option>
+                <option value="18">NO</option>
+                <option value="12">IT</option>
+                <option value="5">DE</option>
+                <option value="11">IE</option>
+                <option value="15">MX</option>
+                <option value="7">ES</option>
+                <option value="16">N,0</option>
+                <option value="20">SE</option>
+                <option value="8">FR</option>
+                <option value="17">NL</option>
+                <option value="19">NZ</option>
+                <option value="4">CH</option>
+                <option value="0">AT</option>
+                <option value="6">DK</option>
+                <option value="2">BE</option>
+                <option value="10">HK</option>
+                <option value="14">LU</option>
+                <option value="21">SG</option>
+                <option value="13">JP</option>
+              </select>
+            
+            <!--<div class="form-group row">
+                <label class="control-label col-sm-2" for="main_category">Main Category:</label>
+                <div class="col-sm-4">          
+                  <input type="text" class="form-control" id="main_category" name="main_category">
+                </div>
+              </div>-->
+            <!-- Selection for "category (drop down)" -->
+              <label for="main_category">Choose your category:</label>
+              <select id="main_category" name="main_category">
+                <option value="12">Publishing</option>
+                <option value="6">Film & Video</option>
+                <option value="10">Music</option>
+                <option value="7">Food</option>
+                <option value="4">Design</option>
+                <option value="2">Crafts</option>
+                <option value="8">Games</option>
+                <option value="1">Comics</option>
+                <option value="5">Fashion</option>
+                <option value="14">Theater</option>
+                <option value="0">Art</option>
+                <option value="11">Photography</option>
+                <option value="13">Technology</option>
+                <option value="3">Dance</option>
+                <option value="9">Journalism</option>
+              </select>
+
+            <div class="form-group row"> 
+            <label class="control-label col-sm-2" for="">&nbsp;</label>                
+              <div class="col-sm-offset-2 col-sm-4">
+                <button type="submit" class="btn btn-primary">Predict</button>
+              </div>
+            </div>
+          </form>
+        <!-- Ends form section -->
+        
+        
+    </div>
+
+
+{% endblock %}

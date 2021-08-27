@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="row justify-content-md-center mb-4">
+        <h3 class='text-primary'>To make these predictions we analyzed a dataset of over 300,000 past projects</h3>
+    </div>
+
+    <!-- Starts image section -->
+    <div class="row justify-content-md-center mb-4">
+        <h3 class='text-primary'>Here is a small sample of the original dataset</h3>
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='images/originaldataset.jpg')}}" class="img-thumbnail" />
+        </div>
+    </div>
+
+    <!-- Ends image section -->
+
+
+    <!-- Starts text section -->
+    <div class="row justify-content-md-center mb-4">
+        <h3 class='text-primary'>We then explored and cleaned the data to determine which features were most important and engineered new columns from the originals</h3>
+    </div>
+
+    <!-- Ends text section -->
+
+    <!-- Starts image section -->
+    <div class="row justify-content-md-center mb-4">
+        <h3 class='text-primary'>This is what our dataset looked like after being cleaned</h3>
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='images/Cleaneddataset.jpg')}}" class="img-thumbnail" />
+        </div>
+    </div>
+
+    <!-- Ends image section -->
+
+    <!-- Starts text section -->
+    <div class="row justify-content-md-center mb-4">
+        <h3 class='text-primary'>We settled on sklearns Gradiant Boosting Classifier to fit and train our data on</h3>
+    </div>
+
+    <!-- Ends text section -->
+
+    <!-- Starts image section -->
+    <div class="row justify-content-md-center mb-4">
+        <h3 class='text-primary'>If you don't care about any of the above and just want to know how to improve your chances, we got you! Here is chart that shows the most important features</h3>
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='images/permimp.jpg')}}" class="img-thumbnail" />
+        </div>
+    </div>
+
+    <!-- Ends image section -->
+
+
+    <!-- Starts image section -->
+    <div class="row justify-content-md-center mb-4">
+        <h3 class='text-primary'>I'm sure it's no surprise that how much you want to earn and the time you have to earn it are the top two features. We included this comparison chart that shows how these two correlate (the lighter the box the better chance for success!)</h3>
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='images/pdp.jpg')}}" class="img-thumbnail" />
+        </div>
+    </div>
+
+{% endblock %}

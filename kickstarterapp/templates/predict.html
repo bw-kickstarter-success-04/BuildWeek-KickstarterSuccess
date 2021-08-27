@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<html>
+<head>
+<style>
+h2 {
+  color: rgb(58, 118, 209);
+  font-family: verdana;
+  font-size: 300%;
+}
+p {
+  color: rgb(247, 247, 247);
+  font-family: courier;
+  font-size: 160%;
+  border: 2px solid rgba(2, 62, 70, 0.144);
+  padding: 20px;
+}
+form {
+  border: 2px solid rgb(2, 62, 70);
+  padding: 20px;
+}
+body {
+  background-color: rgb(89, 158, 204);
+}
+</style>
+</head>
+<body>
+
+    <div class="row justify-content-md-center mb-4">
+        <h3 class='text-primary'>Prediction is: </h3>
+    
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="thumbnail">
+            {% if prediction[0] == 0 %}
+                <p>Our gradient boost model predicted with 76% certainty that this Kickstarter campaign will...</p>
+                <img src="{{url_for('static', filename='images/fail.jpg')}}" class="img-thumbnail" />
+                <p> Want to learn more about how this prediction was made?</p>
+                <button type="button" onclick="window.location.href='/about'">Learn More</button>
+            {% endif %}
+        </div>
+    </div>
+        
+    <div class="row justify-content-md-center">
+        <div class="thumbnail">
+            {% if prediction[0] == 1 %}
+                <p>Our gradient boost model predicted with 76% certainty that this Kickstarter campaign will be a...</p>
+                <img src="{{url_for('static', filename='images/success.png')}}" class="img-thumbnail" />
+                <p> Want to learn more about how this prediction was made?</p>
+                <button type="button" onclick="window.location.href='/about'">Learn More</button>
+            {% endif %}
+        </div>
+    </div>
+
+
+{% endblock %}
