@@ -2,9 +2,13 @@
 # kickstarter Prediction App (https://kickstarter-buildweek.herokuapp.com/)
 
 Created by: 
+
 -Jess Huang 
+
 -Luke Sislowski (https://www.linkedin.com/in/luke-sislowski/)
+
 -Jeremy Hebert
+
 -Jackson Reber (https://www.linkedin.com/in/jacksonreber/)
 
 ---
